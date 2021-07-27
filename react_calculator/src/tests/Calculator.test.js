@@ -29,5 +29,18 @@ describe('Calculator', () => {
     equals.simulate('click');
     expect(runningTotal.text()).toEqual('5');
   })
+  it('should subtract 4 from 7 and get 3', () => {
+    const button7 = container.find('#number7');
+    const button4 = container.find('#number4');
+    const subtract = container.find('#operator-subtract');
+    const equals = container.find('#operator-equals');
+    const runningTotal = container.find('#running-total');
+    button7.simulate('click');
+    subtract.simulate('click');
+    button4.simulate('click');
+    equals.simulate('click');
+    expect(runningTotal.text()).toEqual('3');
+  })
 })
+  
 
