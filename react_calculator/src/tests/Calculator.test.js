@@ -68,7 +68,25 @@ describe('Calculator', () => {
     equals.simulate('click');
     expect(runningTotal.text()).toEqual('3');
   })
-  it('should concatenate multiple number button clicks', () => {
+  it(' should concatenate multiple number button clicks', () => {
+    const button1 = container.find('#number1');
+    const button2 = container.find('#number2');
+    const button3 = container.find('#number3');
+    const button4 = container.find('#number4');
+    const button5 = container.find('#number5');
+    const button7 = container.find('#number7');
+    const runningTotal = container.find('#running-total');
+    button1.simulate('click');
+    button2.simulate('click');
+    button3.simulate('click');
+    button4.simulate('click');
+    button5.simulate('click');
+    button7.simulate('click');
+    expect(runningTotal.text()).toEqual('123457');
+
+
+  })
+  it('chain multiple operations together', () => {
     const button5 = container.find('#number5');
     const button2 = container.find('#number2');
     const button4 = container.find('#number4');
@@ -88,6 +106,24 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('10');
 
   })
+  it('should clear the running total without affecting the calculation', () =>{
+      const button1 = container.find('#number1');
+      const button2 = container.find('#number2');
+      const button3 = container.find('#number3');
+      const button4 = container.find('#number4');
+      const button5 = container.find('#number5');
+      const button8 = container.find('#number8');
+      const clear = container.find('#clear')
+      const runningTotal = container.find('#running-total');
+      button1.simulate('click');
+      button2.simulate('click');
+      button3.simulate('click');
+      button4.simulate('click');
+      button5.simulate('click');
+      button8.simulate('click');
+      clear.simulate('click');
+      expect(runningTotal.text()).toEqual('0');
+  } )
 })
   
 
