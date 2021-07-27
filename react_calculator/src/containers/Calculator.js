@@ -9,6 +9,11 @@ function App() {
   const [previousOperator, setPreviousOperator] = useState(null); 
   const [newTotal, setNewTotal] = useState(true); 
 
+
+  
+
+
+
   const numberClick =  (number) => {
     
     let tempTotal = runningTotal;
@@ -25,7 +30,7 @@ function App() {
     if(!runningTotal.toString().includes("."))
     setRunningTotal(runningTotal + ".")
   }
-
+  
   const clearClick = () => {
     if (runningTotal === 0) {
       setPreviousOperator(null);
@@ -82,6 +87,7 @@ function App() {
 
   const divide = (number) => {
     setRunningTotal(parseFloat(previousTotal) / parseFloat(number));
+    
   }
 
 
